@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+	<style>
+		.back{
+		 background-image: url("{{ url_for('static', filename='image/img22.jpg') }}");
+		  background-repeat: no-repeat;
+		  background-attachment: fixed;
+		  background-size: 100% 100%;
+		}
+		.white{
+		color:white;
+		}
+		center{
+		padding-top:10%;
+		}
+		.space{
+		margin:10px 30px;
+		padding:10px 10px;
+		background: lightblue;
+		width:500px
+		}
+		.gap{
+		padding:10px 20px;
+		}
+		</style>
+</head>
+<body class="back">
+
+	<header class="jumbotron" style="height: 100px;">
+		<div class="container">
+		<div id="brandname">
+		</div>
+		<h1 style="color:#660033; margin-bottom:10px;  margin-left:450px;">CONCLUSION</h1>
+		
+	</div>
+	</header>
+	<center>
+
+	<div class="card" style="width: 30%">
+	<div class="results">
+
+
+		
+	{% if prediction == 'Not Buyable' %}
+	
+	<h2 style="color:red;">Final result for selected product/model is "NOT BUYABLE"</h2>
+	{% elif prediction == 'Buyable' %}
+	
+	<h2 style="color:green;">Final result for selected product/model is "BUYABLE"</h2>
+	{% endif %}
+    </div>
+    </center>
+
+	</div>
+    <a href="{{ url_for('home')}}">Go back</a>
+
+</body>
+</html>

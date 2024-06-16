@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home</title>
+	
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+	<style>
+		.back{
+		
+		 background-image: url("{{ url_for('static', filename='image/imgg.jpg') }}");
+		  background-repeat: no-repeat;
+		  background-attachment: fixed;
+		  background-size: 100% 100%;
+		}
+		.white{
+		color:white;
+		}
+		.space{
+		margin:10px 30px;
+		padding:10px 10px;
+		background:lightblue;
+		width:500px
+		}
+		.gap{
+		padding:10px 20px;
+		}
+		</style>
+</head>
+<body class="back">
+    <h1 style="font-family:sans-serif; margin-left:450px; color:#fff;">WELCOME TO ANALYSIS WORLD</h1>
+
+	<header class="jumbotron" style="height:100px;">
+		<div class="container">
+		<div id="brandname">
+			<label for="products">Choose your product:</label>
+             <select name="products">
+		<option value="..select.." selected="selected">.Choose the model and product.</option>
+		<optgroup style="text-color:green;" label="MOBILES" >
+		  <optgroup label="vivo">
+		    <option value="Y21">Y21</option>
+		  </optgroup>
+		  <optgroup label="iphone">
+		    <option value="13pro">13pro</option>
+		  </optgroup>
+                  <optgroup label="realme">
+		    <option value="8i">8i</option>
+		  </optgroup>
+                  <optgroup label="mi">
+		    <option value="11 Lite">11 Lite</option>
+		  </optgroup>
+                  <optgroup label="oppo">
+		    <option value="A15">A15</option>
+		  </optgroup>
+                </optgroup>
+	        <optgroup label="FASHION">
+                  <option value="Clothing">Clothing</option>
+			<optgroup label="Shoes">
+                 <option value="Asian">Asian</option>
+                 <option value="Bata">Bata</option>
+                 <option value="Puma">Puma</option>
+		</optgroup>
+	        <optgroup label="HOME">
+                  <option value="Pigeon">Pigeon</option>
+                  <option value="Prestige">Prestige</option>
+                  <option value="Philips">Philips</option>
+		</optgroup>
+	        <optgroup label="BOOKS">
+                  <option value="Chetan Bhagat">Chetan Bhagat</option>
+                  <option value="R.K.Narayan">R.K.Narayan</option>
+                  <option value="Rabindranath Tagore">Rabindranath Tagore</option>
+		</optgroup>
+		   <optgroup label="TOYS">
+                  <option value="Toys">Toys</option>
+		</optgroup>
+	        
+
+             </select>
+		</div>
+		
+		
+	</div>
+      
+	</header>
+	<center>
+
+	<div class="card ml-container" style="width:40%" >
+
+		<form class="form-group" action="{{ url_for('predict')}}" method="POST">
+		<label class="black"  for="">Enter the review here</label>
+		<!-- <input type="text" name="comment"/> -->
+		<textarea name="message" class="space form-control" rows="6" cols="50"></textarea>
+		<br/>
+		
+		<input type="submit" class="btn btn-success btn-block" style="width:350px;padding:20px" value="Analyze">
+		
+	</form>
+		
+	</div>
+
+</center>
+
+	
+	
+
+</body>
+</html>
